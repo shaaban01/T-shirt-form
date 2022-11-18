@@ -1,0 +1,11 @@
+body{
+    background-color:#01ddFF;
+}
+
+#results{
+    background-color: bisque;
+    margin:auto;
+    width: fit-content;
+    padding: 25px;
+    border:2px black dashed;
+}

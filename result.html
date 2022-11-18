@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="result.css">
+    <title>Document</title>
+</head>
+<style>
+    h1,h3,h5{
+        text-align: center;
+        text-transform: capitalize;
+    }
+    img{width: 150px;}
+    a{
+        text-decoration: none;
+        color:black;
+    }
+    .btn{
+        margin-top: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>Design you T-Shirt Form</h1>
+    <div id="results"></div>
+    <script>
+        
+        const resultsList = document.getElementById('results');
+        new URLSearchParams(window.location.search).forEach((value,name) => {
+            const div = document.createElement('div');
+            var h3 = document.createElement('h3');
+            var h5 = document.createElement('h5');
+            h3.className = "Name"; 
+            h3.innerText=`${name}`;
+            div.append(h3);
+            
+            if(name == 'image' && value != "") {
+                div.className = "Image"
+                const img = document.createElement('img');
+                img.src = "../images/"+value;
+                div.append(img);
+            }
+            else{
+                h5.className = "Value"; 
+                h5.innerText=`${value}`;
+                div.append(h5);
+            }
+            resultsList.append(div);
+            
+        })
+        btn = document.createElement('button');
+            a = document.createElement('a');
+            a.href = "index.html";
+            a.innerText = "back"
+            btn.append(a);
+            resultsList.append(btn);
+    </script>
+    
+
+</body>
+</html>
